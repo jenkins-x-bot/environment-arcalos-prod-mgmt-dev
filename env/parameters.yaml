@@ -1,0 +1,10 @@
+adminUser:
+  password: vault:arcalos-prod-mgmt/adminUser:password
+  username: admin
+enableDocker: false
+pipelineUser:
+  email: operations+arcalos-admin-bot@googlegroups.com
+  token: vault:arcalos-prod-mgmt/pipelineUser:token
+  username: arcalos-admin-bot
+prow:
+  hmacToken: vault:arcalos-prod-mgmt/prow:hmacToken

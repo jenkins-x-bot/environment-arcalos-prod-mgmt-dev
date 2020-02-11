@@ -1,35 +1,95 @@
+autoUpdate:
+  enabled: false
+  schedule: ""
+bootConfigURL: https://github.com/jenkins-x/jenkins-x-boot-config.git
 cluster:
-  clusterName: ""
-  environmentGitOwner: ""
-  environmentGitPublic: false
-  project: ""
+  clusterName: arcalos-prod-mgmt
+  devEnvApprovers:
+  - cagiti
+  - garethjevans
+  - macox
+  - apg84
+  environmentGitOwner: arcalos-management
+  environmentGitPublic: true
+  gitKind: github
+  gitName: github
+  gitPublic: true
+  gitServer: https://github.com
+  namespace: jx
+  project: arcalos-prod-mgmt
   provider: gke
-  zone: ""
-gitops: true
+  registry: gcr.io
+  vaultName: arcalos-prod-mgmt
+  vaultSAName: arcalos-prod-mgmt-vt
+  zone: us-central1-a
 environments:
-- key: dev
-- key: staging
-- key: production
+- ingress:
+    cloud_dns_secret_name: external-dns-gcp-sa
+    domain: mgmt.jxaas.live
+    externalDNS: true
+    namespaceSubDomain: -jx.
+    tls:
+      email: operations+arcalos-admin-bot@googlegroups.com
+      enabled: true
+      production: true
+  key: dev
+  repository: environment-arcalos-prod-mgmt-dev
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: staging
+  repository: environment-arcalos-prod-mgmt-staging
+- ingress:
+    domain: ""
+    externalDNS: false
+    namespaceSubDomain: ""
+    tls:
+      email: ""
+      enabled: false
+      production: false
+  key: production
+  repository: environment-arcalos-prod-mgmt-production
+gitops: true
 ingress:
-  domain: ""
-  externalDNS: false
+  cloud_dns_secret_name: external-dns-gcp-sa
+  domain: mgmt.jxaas.live
+  externalDNS: true
+  namespaceSubDomain: -jx.
   tls:
-    email: ""
-    enabled: false
-    production: false
+    email: operations+arcalos-admin-bot@googlegroups.com
+    enabled: true
+    production: true
 kaniko: true
-secretStorage: local
+repository: nexus
+secretStorage: vault
 storage:
+  backup:
+    enabled: true
+    url: gs://arcalos-prod-mgmt-2d63c5158026-backup
   logs:
-    enabled: false
-    url: ""
+    enabled: true
+    url: gs://arcalos-prod-mgmt-1ff38032cca3-lts
   reports:
     enabled: false
     url: ""
   repository:
     enabled: false
     url: ""
+vault:
+  bucket: arcalos-prod-mgmt-d8bc5bb8d3b1-vault
+  key: arcalos-prod-mgmt-crypto-key
+  keyring: arcalos-prod-mgmt-keyring
+  name: arcalos-prod-mgmt
+  serviceAccount: arcalos-prod-mgmt-vt
+velero:
+  schedule: ""
+  ttl: ""
 versionStream:
-  ref: "master"
+  ref: v1.0.343
   url: https://github.com/jenkins-x/jenkins-x-versions.git
 webhook: prow
