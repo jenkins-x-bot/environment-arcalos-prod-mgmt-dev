@@ -11,3 +11,7 @@ tekton:
 dex:
   certs:
     newApi: true
+
+jenkins-x-platform:
+  chartmuseum:
+    ingress: false
