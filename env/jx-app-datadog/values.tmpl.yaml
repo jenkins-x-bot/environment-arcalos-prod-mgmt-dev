@@ -3,7 +3,7 @@ datadog:
     apiKey: vault:arcalos-prod-mgmt/monitoring/datadog-app:apiKey
     clusterName: "{{ .Requirements.cluster.clusterName }}"
     tags:
-      - env:dev
+      - env:prod
       - clustername:"{{ .Requirements.cluster.clusterName }}"
     nonLocalTraffic: true
     collectEvents: true
