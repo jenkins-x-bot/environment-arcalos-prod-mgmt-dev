@@ -1,0 +1,30 @@
+datadog:
+  datadog:
+    apiKey: vault:arcalos-prod-mgmt/monitoring/datadog-app:apiKey
+    clusterName: "{{ .Requirements.cluster.clusterName }}"
+    tags:
+      - env:dev
+      - clustername:"{{ .Requirements.cluster.clusterName }}"
+    nonLocalTraffic: true
+    collectEvents: true
+    leaderElection: true
+    logsEnabled: true
+    logsConfigContainerCollectAll: false
+    apmEnabled: true
+    processAgentEnabled: false
+    resources:
+      requests:
+        cpu: 200m
+        memory: 256Mi
+      limits:
+        cpu: 300m
+        memory: 512Mi
+    confd:
+      etcd.yaml: |-
+        ad_identifiers:
+          - etcd
+        init_config:
+        instances:
+          - url: "http://%%host%%:2379"
+  daemonset:
+    useHostPort: true
