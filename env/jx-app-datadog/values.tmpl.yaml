@@ -25,6 +25,6 @@ datadog:
           - etcd
         init_config:
         instances:
-          - url: "http://%%host%%:2379"
+          - url: "https://metrics-server.kube-system/metrics"
   daemonset:
     useHostPort: true
