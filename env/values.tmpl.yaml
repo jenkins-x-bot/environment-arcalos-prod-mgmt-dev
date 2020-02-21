@@ -23,3 +23,5 @@ arcalos-alpha:
   domainIssuerPassword: vault:arcalos-prod-mgmt/aps-alpha/arcalos:domain-issuer-password # pragma: allowlist secret
   domainIssuerUsername: vault:arcalos-prod-mgmt/aps-alpha/arcalos:domain-issuer-username
   domainIssuerUrl: "https://jx-tenant-service{{ .Requirements.ingress.namespaceSubDomain }}{{ .Requirements.ingress.domain }}"
+
+basicAuth: "{{ .Parameters.adminUser.username }}:{SHA}{{ .Parameters.tenantServiceBasicAuth | hashPassword }}"

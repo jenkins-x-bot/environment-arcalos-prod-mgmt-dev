@@ -109,8 +109,12 @@
       "title": "DNS Zone resource used to manage the parentDomain"
     },
     "tenantFolderID": {
-      "type": "string",
+      "type": "integer",
       "title": "Google Project folder ID"
+    },
+    "tenantServiceBasicAuth": {
+      "type": "string",
+      "title": "Basic auth for tenant service"
     },
     "enableDocker": {
       "type": "boolean",
