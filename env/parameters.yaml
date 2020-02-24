@@ -13,5 +13,5 @@ prow:
 parentDNSZone: jxaas-live-parent
 parentDomain: jxaas.live
 parentProject: arcalos-domain-name
-tenantFolderID: 658956314212
+tenantFolderID: "658956314212"
 tenantServiceBasicAuth: vault:arcalos-prod-mgmt/jx-tenant-service/basic-auth:password
