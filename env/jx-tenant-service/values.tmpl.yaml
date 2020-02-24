@@ -1,0 +1,21 @@
+replicaCount: 2
+parentDomain: {{ .Parameters.parentDomain }}
+parentProject: {{ .Parameters.parentProject}}
+parentDNSZone: {{ .Parameters.parentDNSZone}}
+basicAuthPassword: vault:arcalos-prod-mgmt/jx-tenant-service/basic-auth:password
+dbUser: vault:arcalos-prod-mgmt/jx-tenant-service/db-client:username
+dbPassword: vault:arcalos-prod-mgmt/jx-tenant-service/db-client:password
+dbInstance: vault:arcalos-prod-mgmt/jx-tenant-service/db-client:instance
+cloudSQLSA: vault:arcalos-prod-mgmt/jx-tenant-service/db-client:sa
+sa: vault:arcalos-prod-mgmt/aps-alpha/arcalos-prod-sa:json #not sure what this is used for
+saasSA: vault:arcalos-prod-mgmt/aps-alpha/arcalos-prod-sa:json
+cert: vault:arcalos-prod-mgmt/lighthouse-githubapp/arcalos-prod:private-key
+id: vault:arcalos-prod-mgmt/lighthouse-githubapp/arcalos-prod:app-id
+tenantFolderID: {{ .Parameters.tenantFolderID }}
+service:
+  serviceAnnotations:
+    fabric8.io/expose: "false"
+segmentWriteKey: vault:arcalos-prod-mgmt/monitoring/segment:write-key
+env:
+  BOT_NAME: arcalos-bot[bot]
+  JX_FAIL_MISSING_SIGNATURE: true
