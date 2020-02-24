@@ -1,3 +1,16 @@
+cluster:
+  ingress:
+    domain: {{ .Requirements.ingress.domain }}
+    namespaceSubDomain: {{ .Requirements.ingress.namespaceSubDomain | default "-jx." }}
+    tls:
+{{- if .Requirements.ingress.tls.enabled }}
+      enabled: true
+{{- if .Requirements.ingress.tls.production }}
+      production: true
+{{- end }}
+{{- end }}
+
+
 tekton:
 {{- if eq .Requirements.webhook "prow" }}
   enabled: true

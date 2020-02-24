@@ -6,19 +6,19 @@ metadata:
   name: lighthouse-githubapp
 spec:
   rules:
-  - host: lighthouse-githubapp{{ .Values.cluster.namespaceSubDomain }}{{ .Values.cluster.domain }}
+  - host: lighthouse-githubapp{{ .Values.cluster.ingress.namespaceSubDomain }}{{ .Values.cluster.ingress.domain }}
     http:
       paths:
       - backend:
           serviceName: lighthouse-githubapp
           servicePort: 80
-{{- if .Values.cluster.tls }}
+{{- if .Values.cluster.ingress.tls.enabled }}
   tls:
   - hosts:
-    - lighthouse-githubapp{{ .Values.cluster.namespaceSubDomain }}{{ .Values.cluster.domain }}
-{{- if eq .Values.certmanager.production "true" }}
-    secretName: "tls-{{ .Values.cluster.domain | replace "." "-" }}-p"
+    - lighthouse-githubapp{{ .Values.cluster.ingress.namespaceSubDomain }}{{ .Values.cluster.ingress.domain }}
+{{- if .Values.cluster.ingress.tls.production }}
+    secretName: "tls-{{ .Values.cluster.ingress.domain | replace "." "-" }}-p"
 {{- else }}
-    secretName: "tls-{{ .Values.cluster.domain | replace "." "-" }}-s"
+    secretName: "tls-{{ .Values.cluster.ingress.domain | replace "." "-" }}-s"
 {{- end }}
 {{- end }}
