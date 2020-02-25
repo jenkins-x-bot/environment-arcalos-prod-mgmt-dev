@@ -1,0 +1,14 @@
+{{- $rootDomain := trimPrefix .Parameters.domainPrefix .Requirements.ingress.domain }}
+sso-operator:
+  dex:
+    grpcHost: "{{ .Parameters.dashboardGrpchost }}"
+dex:
+  domain: "dex-jx.{{ $rootDomain }}"
+  connectors:
+    google:
+      config:
+        type: oidc
+        name: CloudBees
+        clientID: "{{ .Parameters.dashboardAuthID }}"
+        clientSecret: "{{ .Parameters.dashboardAuthSecret }}"
+        issuer: https://id.cloudbees.com/

@@ -1,0 +1,34 @@
+{{- if .Values.cluster.sso.enabled }}
+{{- $rootDomain := trimPrefix .Values.cluster.ingress.prefix .Values.cluster.ingress.domain }}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  name: dex
+spec:
+  rules:
+  - host: dex{{ .Values.cluster.ingress.namespaceSubDomain }}{{ $rootDomain }}
+    http:
+      paths:
+      - backend:
+          serviceName: dex
+          servicePort: 80
+  - host: dex{{ .Values.cluster.ingress.namespaceSubDomain }}{{ .Values.cluster.ingress.domain }}
+    http:
+      paths:
+      - backend:
+          serviceName: dex
+          servicePort: 80
+{{- if .Values.cluster.ingress.tls.enabled }}
+  tls:
+  - hosts:
+    - dex{{ .Values.cluster.ingress.namespaceSubDomain }}{{ $rootDomain }}
+    - dex{{ .Values.cluster.ingress.namespaceSubDomain }}{{ .Values.cluster.ingress.domain }}
+{{- if .Values.cluster.ingress.production }}
+    secretName: "tls-{{ .Values.cluster.ingress.domain | replace "." "-" }}-p"
+{{- else }}
+    secretName: "tls-{{ .Values.cluster.ingress.domain | replace "." "-" }}-s"
+{{- end }}
+{{- end }}
+{{- end }}

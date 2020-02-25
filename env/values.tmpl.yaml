@@ -1,5 +1,6 @@
 cluster:
   ingress:
+    prefix: "mgmt."
     domain: {{ .Requirements.ingress.domain }}
     namespaceSubDomain: {{ .Requirements.ingress.namespaceSubDomain | default "-jx." }}
     tls:
@@ -10,6 +11,9 @@ cluster:
 {{- end }}
 {{- end }}
 
+# controls the dex ingress
+  sso:
+    enabled: true
 
 tekton:
 {{- if eq .Requirements.webhook "prow" }}

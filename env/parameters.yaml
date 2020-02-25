@@ -9,9 +9,17 @@ pipelineUser:
 prow:
   hmacToken: vault:arcalos-prod-mgmt/prow:hmacToken
 
+domainPrefix: "mgmt."
+
 # jx-tenant-service
 parentDNSZone: jxaas-live-parent
 parentDomain: jxaas.live
 parentProject: arcalos-domain-name
 tenantFolderID: "658956314212"
 tenantServiceBasicAuth: vault:arcalos-prod-mgmt/jx-tenant-service/basic-auth:password
+
+# dashboard
+dashboardAuthID: vault:arcalos-prod-mgmt/dashboard/auth:id
+dashboardAuthOrg: arcalos-dashboard
+dashboardAuthSecret: vault:arcalos-prod-mgmt/dashboard/auth:secret
+dashboardGrpchost: dex.jx
