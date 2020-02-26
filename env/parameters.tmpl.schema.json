@@ -98,13 +98,11 @@
     },
     "dashboardAuthID": {
       "type": "string",
-      "title": "Dashboard auth id",
-      "format": "token"
+      "title": "Dashboard auth id"
     },
     "dashboardAuthSecret": {	
       "type": "string",	
-      "title": "Dashboard auth secret",
-      "format": "token"
+      "title": "Dashboard auth secret"
     },	
     "dashboardAuthOrg": {	
       "type": "string",	
