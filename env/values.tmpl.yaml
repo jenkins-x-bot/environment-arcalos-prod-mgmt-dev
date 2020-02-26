@@ -1,6 +1,5 @@
 cluster:
   ingress:
-    prefix: {{- regexFind "^[^.]+." .Requirements.ingress.domain }}
     domain: {{ .Requirements.ingress.domain }}
     namespaceSubDomain: {{ .Requirements.ingress.namespaceSubDomain | default "-jx." }}
     tls:

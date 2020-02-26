@@ -1,4 +1,5 @@
-{{- $rootDomain := trimPrefix .Values.cluster.ingress.prefix .Values.cluster.ingress.domain }}
+{{- $prefix := regexFind "^[^.]+." .Values.cluster.ingress.domain }}
+{{- $rootDomain := trimPrefix $prefix .Values.cluster.ingress.domain }}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
