@@ -35,6 +35,11 @@ pipelineConfig:
             command: make
             dir: /workspace/source/env
             name: lint-env-helm
+          - args:
+            - build
+            command: make
+            dir: /workspace/source/systems/acme
+            name: lint-system-acme-helm
     release:
       pipeline:
         agent:
