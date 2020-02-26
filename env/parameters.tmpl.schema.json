@@ -96,11 +96,6 @@
         }
       }
     },
-    "domainPrefix": {
-      "type": "string",
-      "title": "Domain prefix value - also present in the env chart values",
-      "format": "token"
-    },
     "dashboardAuthID": {
       "type": "string",
       "title": "Dashboard auth id",

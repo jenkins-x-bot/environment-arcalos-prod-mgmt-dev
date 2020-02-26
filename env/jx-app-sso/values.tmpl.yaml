@@ -1,4 +1,5 @@
-{{- $rootDomain := trimPrefix .Parameters.domainPrefix .Requirements.ingress.domain }}
+{{- $prefix := regexFind "^[^.]+." .Requirements.ingress.domain }}
+{{- $rootDomain := trimPrefix $prefix .Requirements.ingress.domain }}
 sso-operator:
   dex:
     grpcHost: "{{ .Parameters.dashboardGrpchost }}"
