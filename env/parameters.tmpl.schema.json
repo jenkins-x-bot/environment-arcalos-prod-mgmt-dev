@@ -96,6 +96,30 @@
         }
       }
     },
+    "domainPrefix": {
+      "type": "string",
+      "title": "Domain prefix value - also present in the env chart values",
+      "format": "token"
+    },
+    "dashboardAuthID": {
+      "type": "string",
+      "title": "Dashboard auth id",
+      "format": "token"
+    },
+    "dashboardAuthSecret": {	
+      "type": "string",	
+      "title": "Dashboard auth secret",
+      "format": "token"
+    },	
+    "dashboardAuthOrg": {	
+      "type": "string",	
+      "title": "Dashboard auth org"	
+    },
+    "dashboardGrpchost": {	
+      "type": "string",	
+      "title": "Dex GRPC Host",	
+      "description": "TODO OK LETS DO THIS A BETTER WAY"	
+    },
     "parentDomain": {
       "type": "string",
       "title": "Registered domain the tenant service will use to create consumers"

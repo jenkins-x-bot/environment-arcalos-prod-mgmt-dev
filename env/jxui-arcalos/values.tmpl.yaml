@@ -1,0 +1,18 @@
+{{- $rootDomain := trimPrefix .Parameters.domainPrefix .Requirements.ingress.domain }}
+jxui:
+  gcpSA: vault:arcalos-prod-mgmt/aps-alpha/arcalos-prod-sa:json
+  replicaCount: 2
+  skipExposeService: true
+  sso:
+    create: true
+    connector: cloudbees-google
+    certIssuerName: letsencrypt-prod
+    domain: "{{ $rootDomain }}"
+    oidcIssuerUrl: "https://dex{{ .Requirements.ingress.namespaceSubDomain }}{{ $rootDomain }}"
+  roxApiKey: vault:arcalos-prod-mgmt/feature-flag/rox:api-key
+  segmentWriteKey: vault:arcalos-prod-mgmt/monitoring/segment:write-key
+  service:
+    serviceAnnotations:
+      fabric8.io/expose: "false"
+      fabric8.io/exposeUrl: https://arcalosui{{ .Requirements.ingress.namespaceSubDomain }}{{ $rootDomain }}
+

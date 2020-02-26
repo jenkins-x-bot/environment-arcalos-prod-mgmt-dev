@@ -1,3 +1,5 @@
+{{- $rootDomain := trimPrefix .Parameters.domainPrefix .Requirements.ingress.domain }}
+{{- $namespaceSubDomain := .Requirements.ingress.namespaceSubDomain | default "-jx." }}
 cluster:
   domain: {{ .Requirements.ingress.domain }}
   provider: {{ .Requirements.cluster.provider }}
@@ -18,3 +20,9 @@ certmanager:
   email:  "{{ .Requirements.ingress.tls.email }}"
   enabled: {{ .Requirements.ingress.tls.enabled }}
 {{- end }}
+
+additionalSolvers:
+- domains:
+  - "dashboard.{{ $rootDomain }}"
+  - "dex{{ $namespaceSubDomain }}{{ $rootDomain }}"
+  projectID: arcalos-domain-name
