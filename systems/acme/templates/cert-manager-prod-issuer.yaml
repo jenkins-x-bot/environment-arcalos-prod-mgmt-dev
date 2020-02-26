@@ -32,14 +32,14 @@ spec:
           region: {{ .Values.cluster.region }}
 {{- end }}
 {{- if hasKey .Values "additionalSolvers" }}
-{{- $defaultProjectID := .Values.cluster.projectID -}}
 {{- range .Values.additionalSolvers }}
     - selector:
         dnsNames:
 {{- range .domains }}
         - {{ . | quote }}
 {{- end }}
- # ACME DNS-01 provider configurations
+{{- end }}
+      # ACME DNS-01 provider configurations
       dns01:
 {{- if eq .Values.cluster.provider "gke" }}
         clouddns:
