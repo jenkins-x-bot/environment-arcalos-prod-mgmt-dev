@@ -9,8 +9,6 @@ pipelineUser:
 prow:
   hmacToken: vault:arcalos-prod-mgmt/prow:hmacToken
 
-domainPrefix: "mgmt."
-
 # jx-tenant-service
 parentDNSZone: jxaas-live-parent
 parentDomain: jxaas.live

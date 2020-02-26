@@ -1,6 +1,5 @@
 cluster:
   ingress:
-    prefix: "mgmt."
     domain: {{ .Requirements.ingress.domain }}
     namespaceSubDomain: {{ .Requirements.ingress.namespaceSubDomain | default "-jx." }}
     tls:
