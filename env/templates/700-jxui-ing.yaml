@@ -15,7 +15,7 @@ spec:
         - backend:
             serviceName: sso-jenkins-x-jxui
             servicePort: 80
-  - host: jxui-arcalos{{ .Values.cluster.ingress.namespaceSubDomain }}{{ .Values.cluster.ingress.domain }}
+  - host: jxui{{ .Values.cluster.ingress.namespaceSubDomain }}{{ .Values.cluster.ingress.domain }}
     http:
       paths:
         - backend:
