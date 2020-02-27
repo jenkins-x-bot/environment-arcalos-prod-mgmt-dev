@@ -26,7 +26,7 @@ spec:
   - hosts:
     - dex{{ .Values.cluster.ingress.namespaceSubDomain }}{{ $rootDomain }}
     - dex{{ .Values.cluster.ingress.namespaceSubDomain }}{{ .Values.cluster.ingress.domain }}
-{{- if .Values.cluster.ingress.production }}
+{{- if .Values.cluster.ingress.tls.production }}
     secretName: "tls-{{ .Values.cluster.ingress.domain | replace "." "-" }}-p"
 {{- else }}
     secretName: "tls-{{ .Values.cluster.ingress.domain | replace "." "-" }}-s"
