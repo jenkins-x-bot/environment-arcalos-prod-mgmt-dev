@@ -38,21 +38,15 @@ spec:
 {{- range .domains }}
         - {{ . | quote }}
 {{- end }}
-{{- end }}
       # ACME DNS-01 provider configurations
       dns01:
-{{- if eq .Values.cluster.provider "gke" }}
         clouddns:
           # The project in which to update the DNS zone
-          project: "{{ .Values.cluster.projectID }}"
+          project: "{{ .projectID }}"
           # A secretKeyRef to a google cloud json service account
           serviceAccountSecretRef:
             name: external-dns-gcp-sa
             key: credentials.json
-{{- end }}
-{{- if eq .Values.cluster.provider "eks" }}
-        route53:
-          region: {{ .Values.cluster.region }}
 {{- end }}
 {{- end }}
 {{- end }}
