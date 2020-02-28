@@ -5,7 +5,7 @@ kind: Ingress
 metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
-  name: jxui-arcalos
+  name: jxui
 spec:
   rules:
   # This domain MUST be first as the oauth proxy uses the first domain in the list to work out it's redirect url
