@@ -28,6 +28,9 @@ dex:
   certs:
     newApi: true
 
+expose:
+  enabled: false
+
 arcalosAlpha:
   pipelineGithubUser: vault:arcalos-prod-mgmt/aps-alpha/arcalos:pipeline-github-user
   pipelineGithubToken: vault:arcalos-prod-mgmt/aps-alpha/arcalos:pipeline-github-token
