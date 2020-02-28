@@ -13,3 +13,4 @@ dex:
         clientID: "{{ .Parameters.dashboardAuthID }}"
         clientSecret: "{{ .Parameters.dashboardAuthSecret }}"
         issuer: https://id.cloudbees.com/
+skipExposeService: true
