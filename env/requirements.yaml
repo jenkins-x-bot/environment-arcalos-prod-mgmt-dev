@@ -28,7 +28,7 @@ dependencies:
   version: 0.0.7
 - name: jx-tenant-service
   repository: https://storage.googleapis.com/chartmuseum.jenkins-x.io
-  version: 0.0.453
+  version: 0.0.458
 - name: lighthouse-githubapp
   repository: https://storage.googleapis.com/chartmuseum.jenkins-x.io
   version: 0.0.567
