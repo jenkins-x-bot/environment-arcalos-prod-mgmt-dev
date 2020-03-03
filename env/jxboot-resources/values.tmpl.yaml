@@ -213,5 +213,7 @@ autoUpdate:
   enabled: {{ .Requirements.autoUpdate.enabled }}
 {{- end }}
 
+mergeUpdatebotPRs: false
+
 versions:
   builders: {{ versionStream "docker" "gcr.io/jenkinsxio/builder-go" }}
