@@ -3,4 +3,4 @@ cert: vault:arcalos-prod-mgmt/lighthouse-githubapp/arcalos-prod:private-key
 id: vault:arcalos-prod-mgmt/lighthouse-githubapp/arcalos-prod:app-id
 secret: vault:arcalos-prod-mgmt/lighthouse-githubapp/arcalos-prod:webhook-secret
 
-replicaCount: 1
+replicaCount: 3
