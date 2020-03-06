@@ -9,4 +9,4 @@ tenantService:
 replicaCount: 3
 
 env:
-  JX_LOG_LEVEL: "debug"
+  DEBUG_LOGGING: "true"
