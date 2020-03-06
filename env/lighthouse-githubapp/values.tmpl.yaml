@@ -8,5 +8,4 @@ tenantService:
 
 replicaCount: 3
 
-env:
-  DEBUG_LOGGING: "true"
+debug: true
