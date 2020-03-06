@@ -9,8 +9,8 @@ dbInstance: vault:arcalos-prod-mgmt/jx-tenant-service/db-client:instance
 cloudSQLSA: vault:arcalos-prod-mgmt/jx-tenant-service/db-client:sa
 sa: vault:arcalos-prod-mgmt/aps-alpha/arcalos-prod-sa:json #not sure what this is used for
 saasSA: vault:arcalos-prod-mgmt/aps-alpha/arcalos-prod-sa:json
-cert: vault:arcalos-prod-mgmt/lighthouse-githubapp/arcalos-prod2:private-key
-id: vault:arcalos-prod-mgmt/lighthouse-githubapp/arcalos-prod2:app-id
+cert: vault:arcalos-prod-mgmt/lighthouse-githubapp/arcalos-prod:private-key
+id: vault:arcalos-prod-mgmt/lighthouse-githubapp/arcalos-prod:app-id
 tenantFolderID: {{ .Parameters.tenantFolderID }}
 service:
   serviceAnnotations:
