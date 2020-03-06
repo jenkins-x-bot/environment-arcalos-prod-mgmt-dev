@@ -9,5 +9,3 @@ tenantService:
 replicaCount: 3
 
 debug: true
-env:
-  GO_SCM_LOG_WEBHOOKS: "true"
