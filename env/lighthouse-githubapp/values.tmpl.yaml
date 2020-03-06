@@ -4,3 +4,6 @@ id: vault:arcalos-prod-mgmt/lighthouse-githubapp/arcalos-prod:app-id
 secret: vault:arcalos-prod-mgmt/lighthouse-githubapp/arcalos-prod:webhook-secret
 
 replicaCount: 1
+
+env:
+  JX_LOG_LEVEL: "debug"
