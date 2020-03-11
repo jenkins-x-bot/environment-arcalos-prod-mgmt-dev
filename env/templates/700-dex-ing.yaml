@@ -19,7 +19,7 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: dex
+          serviceName: oauth-proxy-jxui-frontend
           servicePort: 80
 {{- if .Values.cluster.ingress.tls.enabled }}
   tls:
