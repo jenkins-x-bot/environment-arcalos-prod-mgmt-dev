@@ -2,8 +2,8 @@ config:
   clientID: "{{ .Parameters.dashboardAuthID }}"
   clientSecret: "{{ .Parameters.dashboardAuthSecret }}"
 extraArgs:
+  cookie-secret: vault:arcalos-prod-mgmt/dashboard/cookie:secret
   email-domain: "*"
-  force-https: true
   oidc-issuer-url: "https://id.cloudbees.com/"
   pass-authorization-header: true
   pass-access-token: true
