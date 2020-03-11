@@ -38,3 +38,7 @@ dependencies:
 - name: jx-app-sso
   repository: https://storage.googleapis.com/chartmuseum.jenkins-x.io
   version: 0.0.29
+- name: oauth2-proxy
+  alias: oauth-proxy-jxui-frontend
+  repository: https://kubernetes-charts.storage.googleapis.com/
+  version: 2.2.2
