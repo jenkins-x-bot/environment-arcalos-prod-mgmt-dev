@@ -1,0 +1,17 @@
+config:
+  clientID: "{{ .Parameters.dashboardAuthID }}"
+  clientSecret: "{{ .Parameters.dashboardAuthSecret }}"
+extraArgs:
+  email-domain: "*"
+  force-https: true
+  oidc-issuer-url: "https://id.cloudbees.com/"
+  pass-authorization-header: true
+  pass-access-token: true
+  pass-basic-auth: false
+  pass-host-header: false
+  provider: oidc
+  redirect-url: "https://dashboard.jxaas.live/oauth2/callback"
+  scope: "openid email profile groups federated:id"
+  skip-provider-button: true
+  upstream: "http://jxui:80"
+fullnameOverride: oauth-proxy-jxui-frontend
