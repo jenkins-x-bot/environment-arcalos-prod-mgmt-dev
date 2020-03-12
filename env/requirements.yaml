@@ -34,11 +34,11 @@ dependencies:
   version: 0.0.617
 - name: jxui-arcalos
   repository: https://charts.cloudbees.com/cjxd/cloudbees
-  version: 0.0.1141
+  version: 0.0.1142
 - name: jx-app-sso
   repository: https://storage.googleapis.com/chartmuseum.jenkins-x.io
   version: 0.0.29
-- name: oauth2-proxy
-  alias: oauth-proxy-jxui-frontend
+- alias: oauth-proxy-jxui-frontend
+  name: oauth2-proxy
   repository: https://kubernetes-charts.storage.googleapis.com/
   version: 2.2.2
