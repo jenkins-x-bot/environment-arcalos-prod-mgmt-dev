@@ -2,16 +2,20 @@ config:
   clientID: "{{ .Parameters.dashboardAuthID }}"
   clientSecret: "{{ .Parameters.dashboardAuthSecret }}"
 extraArgs:
+  aproval-prompt:
   cookie-secret: vault:arcalos-prod-mgmt/dashboard/cookie:secret
+  cookie-path: /jenkinsx
+  cookie-domain: .jxaas.live
   email-domain: "*"
-  oidc-issuer-url: "https://id.cloudbees.com/"
+  oidc-issuer-url: https://id.cloudbees.com/
   pass-authorization-header: true
   pass-access-token: true
   pass-basic-auth: false
-  pass-host-header: false
+  proxy-prefix: /jenkinsx
   provider: oidc
-  redirect-url: "https://dashboard.jxaas.live/oauth2/callback"
+  redirect-url: https://dashboard.jxaas.live/jenkinsx/oauth2/callback"
   scope: "openid email profile groups federated:id"
   skip-provider-button: true
-  upstream: "http://jxui:80"
+  upstream: http://jxui:80
+  whitelist-domain: .jxaas.live
 fullnameOverride: oauth-proxy-jxui-frontend
