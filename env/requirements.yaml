@@ -34,7 +34,7 @@ dependencies:
   version: 0.0.643
 - name: jxui-arcalos
   repository: https://charts.cloudbees.com/cjxd/cloudbees
-  version: 0.0.1144
+  version: 0.0.1146
 - name: jx-app-sso
   repository: https://storage.googleapis.com/chartmuseum.jenkins-x.io
   version: 0.0.29
