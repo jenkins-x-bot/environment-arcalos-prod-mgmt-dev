@@ -42,3 +42,7 @@ dependencies:
   name: oauth2-proxy
   repository: https://kubernetes-charts.storage.googleapis.com/
   version: 2.2.2
+- alias: oauth-proxy-jxui-backend
+  name: oauth2-proxy
+  repository: https://kubernetes-charts.storage.googleapis.com/
+  version: 2.2.2
