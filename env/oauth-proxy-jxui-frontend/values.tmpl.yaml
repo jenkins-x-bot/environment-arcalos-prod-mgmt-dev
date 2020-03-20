@@ -2,7 +2,7 @@ config:
   clientID: "{{ .Parameters.dashboardAuthID }}"
   clientSecret: "{{ .Parameters.dashboardAuthSecret }}"
 extraArgs:
-  approval-prompt: ""
+  approval-prompt: none
   cookie-secret: vault:arcalos-prod-mgmt/dashboard/cookie:secret
   cookie-name: jxui-oidc
   cookie-domain: .jxaas.live
@@ -15,9 +15,9 @@ extraArgs:
   redirect-url: https://dashboard.jxaas.live/oauth2/callback
   scope: "openid email profile groups federated:id"
   skip-provider-button: true
-  upstream: http://jxui:80
+  upstream: http://jxui:80/
   whitelist-domain: .jxaas.live
 image:
   repository: cagiti/oauth2_proxy
-  tag: 5.0.0_no_approval_prompt
+  tag: 5.0.0_no_approval_prompt2
 fullnameOverride: oauth-proxy-jxui-frontend
