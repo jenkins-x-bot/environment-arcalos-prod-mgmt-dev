@@ -13,13 +13,18 @@ spec:
     http:
       paths:
         - backend:
+            serviceName: oauth-proxy-jxui-backend
+            servicePort: 80
+          path: /jenkinsx/api/.*
+        - backend:
             serviceName: oauth-proxy-jxui-frontend
             servicePort: 80
+          path: /jenkinsx/.*
   - host: jxui{{ .Values.cluster.ingress.namespaceSubDomain }}{{ .Values.cluster.ingress.domain }}
     http:
       paths:
         - backend:
-            serviceName: sso-jenkins-x-jxui
+            serviceName: oauth-proxy-jxui-frontend
             servicePort: 80
 {{- if .Values.cluster.ingress.tls.enabled }}
   tls:

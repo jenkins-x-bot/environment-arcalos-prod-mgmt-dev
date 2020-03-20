@@ -5,11 +5,7 @@ jxui:
   replicaCount: 2
   skipExposeService: true
   sso:
-    create: true
-    connector: cloudbees-google
-    certIssuerName: letsencrypt-prod
-    domain: "{{ $rootDomain }}"
-    oidcIssuerUrl: "https://dex{{ .Requirements.ingress.namespaceSubDomain }}{{ $rootDomain }}"
+    create: false
   roxApiKey: vault:arcalos-prod-mgmt/feature-flag/rox:api-key
   segmentWriteKey: vault:arcalos-prod-mgmt/monitoring/segment:write-key
   service:
