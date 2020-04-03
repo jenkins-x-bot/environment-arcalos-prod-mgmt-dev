@@ -31,7 +31,7 @@ dependencies:
   version: 0.0.567
 - name: lighthouse-githubapp
   repository: https://storage.googleapis.com/chartmuseum.jenkins-x.io
-  version: 0.0.738
+  version: 0.0.740
 - name: jxui-arcalos
   repository: https://charts.cloudbees.com/cjxd/cloudbees
   version: 0.0.1193
