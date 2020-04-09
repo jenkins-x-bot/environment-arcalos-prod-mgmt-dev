@@ -17,7 +17,7 @@ service:
     fabric8.io/expose: "false"
 segmentWriteKey: vault:arcalos-prod-mgmt/monitoring/segment:write-key
 env:
-  BOT_NAME: arcalos-admin-bot[bot]
+  BOT_NAME: cloudbees-ci-cd[bot]
   JX_FAIL_MISSING_SIGNATURE: true
   GITHUB_APP_INSTALL_URL: https://github.com/apps/cloudbees-ci-cd/installations/new
 
