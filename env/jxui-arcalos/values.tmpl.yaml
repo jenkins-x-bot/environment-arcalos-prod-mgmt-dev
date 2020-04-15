@@ -15,4 +15,4 @@ jxui:
       fabric8.io/exposeUrl: https://arcalosui{{ .Requirements.ingress.namespaceSubDomain }}{{ $rootDomain }}
     backend:
       env:
-        INIT_GCP_SERVICE_ACCOUNT: "true"    
+        INIT_GCP_SERVICE_ACCOUNT: "true"
