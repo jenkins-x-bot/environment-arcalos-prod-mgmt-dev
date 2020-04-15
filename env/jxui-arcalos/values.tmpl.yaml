@@ -13,6 +13,3 @@ jxui:
     serviceAnnotations:
       fabric8.io/expose: "false"
       fabric8.io/exposeUrl: https://arcalosui{{ .Requirements.ingress.namespaceSubDomain }}{{ $rootDomain }}
-    backend:
-      env:
-        INIT_GCP_SERVICE_ACCOUNT: "true"
