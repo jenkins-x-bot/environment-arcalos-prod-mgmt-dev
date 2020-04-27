@@ -16,6 +16,7 @@ service:
   serviceAnnotations:
     fabric8.io/expose: "false"
 segmentWriteKey: vault:arcalos-prod-mgmt/monitoring/segment:write-key
+roxApiKey: vault:arcalos-prod-mgmt/feature-flag/rox:api-key
 env:
   BOT_NAME: cloudbees-ci-cd[bot]
   JX_FAIL_MISSING_SIGNATURE: true
