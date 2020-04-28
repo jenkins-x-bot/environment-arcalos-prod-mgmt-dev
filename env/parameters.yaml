@@ -2,9 +2,7 @@ adminUser:
   password: vault:arcalos-prod-mgmt/adminUser:password
   username: admin
 dashboardAuthID: vault:arcalos-prod-mgmt/dashboard/auth:id
-dashboardAuthOrg: arcalos-dashboard
 dashboardAuthSecret: vault:arcalos-prod-mgmt/dashboard/auth:secret
-dashboardGrpchost: dex.jx
 enableDocker: false
 parentDNSZone: jxaas-live-parent
 parentDomain: jxaas.live
