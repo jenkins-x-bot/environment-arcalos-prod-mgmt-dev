@@ -34,7 +34,7 @@ dependencies:
   version: 0.0.932
 - name: jxui-arcalos
   repository: https://charts.cloudbees.com/cjxd/cloudbees
-  version: 0.0.1243
+  version: 0.0.1250
 - alias: oauth-proxy-jxui-frontend
   name: oauth2-proxy
   repository: https://kubernetes-charts.storage.googleapis.com/
