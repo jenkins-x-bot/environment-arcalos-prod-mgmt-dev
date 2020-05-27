@@ -18,10 +18,10 @@ service:
 segmentWriteKey: vault:arcalos-prod-mgmt/monitoring/segment:write-key
 roxApiKey: vault:arcalos-prod-mgmt/feature-flag/rox:api-key
 env:
-  BOT_NAME: cloudbees-ci-cd[bot]
+  BOT_NAME: cloudbees-cloud-native-ci-cd[bot]
   JX_FAIL_MISSING_SIGNATURE: true
-  GITHUB_APP_INSTALL_URL: https://github.com/apps/cloudbees-ci-cd/installations/new
-  GITHUB_APP_NAME: "Cloudbees CI/CD"
+  GITHUB_APP_INSTALL_URL: https://github.com/apps/cloudbees-cloud-native-ci-cd/installations/new  
+  GITHUB_APP_NAME: "CloudBees Cloud Native CI/CD"
 
 updateController:
   location: us-central1
